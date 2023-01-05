@@ -54,7 +54,6 @@ int test_LED      = 5;      // GPIO5  -> D1
 // So the LED will be OFF after time registration after a BANG.
 //
 
-
 IPAddress local_IP(192,168,178,35);   // 32, 33, 34 or 35 for Arno's local
 // Module marked 'V' at 192.168.178.32
 // Module marked '+' at 192.168.178.33
@@ -68,7 +67,6 @@ IPAddress subnet(255,255,255,0);
 const char* ssid        = "MySSID";
 const char* password    = "password";      // Is "fixed" in one of my modules...
 /// const int   schannel    = 7;
-
 
 // That number has to be in my code ;-)
 // just the number...
@@ -91,7 +89,6 @@ int salevel = 0;
 // ESP-module with green : coding: 534
 // ESP-module with green + coding: 548
 
-
 // The pin input for the audio signal of the MAX4466 module
 const int Audio_pin = A0;
 
@@ -105,9 +102,6 @@ int bang[maxBangs+1];
 unsigned long timeRecord[maxBangs+1];
 int nBang;
 
-
-
-  
 void getSilentLevel() {
   //Check zero level
   delay(2000);
@@ -118,8 +112,6 @@ void getSilentLevel() {
   salevel /=  samples;
   testedSilent = salevel;
 }
-
-
 
 /*
  * The one second pulse from the GPS module has a HIGH for 100 milliseconds and a low for 900 milliseconds.
@@ -144,8 +136,6 @@ unsigned long get_TSP_time_sync_millis() {
     ts_ms = millis();             
     return (ts_ms);
 }         
- 
-
 
 unsigned long get_GPS_time (unsigned long ref_time) {
     digitalWrite(test_LED,HIGH);
@@ -188,7 +178,6 @@ unsigned long get_GPS_time (unsigned long ref_time) {
     digitalWrite(test_LED,LOW);    
     return (gps_time_ms);
 }
-
 
 // Scaling of the analog input data
 // The silent level will brought down to zero level
@@ -262,7 +251,6 @@ void listen_mic() {
     delay (theUltimateNumber); 
 }
 
-
 String show_time (unsigned long ulTime) {
     char rt[16];
 
@@ -274,7 +262,6 @@ String show_time (unsigned long ulTime) {
     sprintf(rt,"%i:%02i:%02i,%03i",h,m,s,ms);
     return(rt);
 }
-
 
 // *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** ** 
 // The main setup
@@ -317,7 +304,6 @@ void setup() {
     // LED ON -- now wait for the BANGs
     digitalWrite(test_LED,HIGH);
 }
-
 
 // *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** **  *** **** ** 
 // The main loop
