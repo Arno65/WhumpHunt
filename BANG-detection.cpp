@@ -65,7 +65,7 @@ IPAddress gateway(192,168,178,1);
 IPAddress subnet(255,255,255,0); 
 
 // Replace with your network credentials
-const char* ssid        = "Nw812";
+const char* ssid        = "MySSID";
 const char* password    = "password";      // Is "fixed" in one of my modules...
 /// const int   schannel    = 7;
 
